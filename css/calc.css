@@ -1,0 +1,397 @@
+@font-face
+  {
+    font-family: 'DIN Pro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/DINPro.woff');
+  }
+@font-face
+  {
+    font-family: 'DIN Pro Medium';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/DINPro-Medium.woff');
+  }
+@font-face
+  {
+    font-family: 'DIN Pro Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/DINPro-Bold.woff');
+  }
+*
+  {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "DIN Pro";
+    font-size: 19px;
+  }
+body,html{
+  overflow-x: hidden;
+}
+a
+  {
+    text-decoration: none;
+    color: black;
+  }
+header
+  {
+    height: 182px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+  }
+header > .content
+  {
+    width: 1031px;
+    height: 124px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  header > .content > .preview
+    {
+      width: 355px;
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 28.34px;
+      letter-spacing: -1.34px;
+    }
+  header > .content > .contacts > .mobile
+    {
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 38.12px;
+      text-transform: uppercase;
+      letter-spacing: -1.57px;
+    }
+  header > .content > .contacts > a
+    {
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 28.34px;
+      text-decoration: underline;
+      letter-spacing: -1.06px;
+      float: right;
+    }
+html,body,main
+  {
+    width: 100%;
+  }
+main
+  {
+    background: url('/img/calcbg.jpg') no-repeat right center;
+    background-color: #FBFCFB;
+    background-size: auto 100%;
+    position: relative;
+    padding-bottom: 131px;
+  }
+.calc-wrap
+  {
+    box-sizing: content-box;
+    max-width: 1031px;
+    padding: 75px 33px 0;
+    margin: 0 auto; 
+  }
+  .calc-wrap h1{
+    margin: 0;
+    text-align: center;
+    color: #100d0d;
+    font-family: "DIN Pro";
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+  .calc-wrap >.prev{
+    margin-top: 18px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  .calc-wrap .pick{
+    margin-bottom: 38px;
+  }
+  .calc-wrap .pick > *:first-child{
+    margin-right: -8px;
+  }
+  .form-calc{
+    width: 466px;
+  }
+input[name="Тип"]+span:before,input[name="Тип"]+span:after{
+  display: none;
+}
+input[name="Тип"]+span{
+  height: 40px;
+  width: 196px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(87, 80, 83, 0.35);
+  background-color: white;
+  padding: 10px !important;
+  box-sizing: content-box;
+  color: black;
+  transition: all .2s;
+  transform: scale(0.95);
+}
+input[name="Тип"]:checked+span{
+  background-color: #0AB31C;
+  color: white;
+  transform: scale(1.001);
+}
+.form-content{
+  display: flex;
+  justify-content: space-between;
+}
+.inp-wrap{
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.inp-wrap input{
+  color: #39474f;
+  font-family: 'DIN Pro Bold';
+  font-size: 23px !important;
+  font-weight: 700;
+  line-height: 28.34px;
+  text-align: right;
+  width: 110px !important;
+  max-height: 100%;
+}
+.rng-mark{
+  display: flex;
+  justify-content: space-between;
+}
+.rng-wrap{
+  margin-bottom: 50px;
+}
+.radio{
+  display: flex;
+  justify-content: space-around;
+}
+.output{
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+}
+.calc .preview
+{
+  height: 361px;
+  box-sizing: border-box;
+  display: inline-table;
+  padding: 36px 23px 20px 33px;
+  width: 445px;
+  box-shadow: 0 2px 6px rgba(87, 80, 83, 0.35);
+  background-color: #fff;
+}
+  .preview .plt-prev,
+  .preview .stv-prev{
+    margin-bottom: 20px;
+    color: #39474f;
+    font-family: "DIN Pro";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28.34px;
+    /* Text style for "Ваш ежемес" */
+    letter-spacing: -1.34px;
+  }
+  .preview .dohod-prev{
+    margin-bottom: 19px;
+  }
+  .preview .plt-val,
+  .preview .stv-val,
+  .preview .dohod-val{
+    height: auto;
+    display: block;
+    color: #39474f;
+    font-family: 'DIN Pro Bold';
+    font-size: 30px !important;
+    font-weight: 700;
+    line-height: 28.34px;
+    /* Text style for "8. 75%" */
+    letter-spacing: -2.12px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .preview .ps{
+    color: #39474f;
+    font-family: "DIN Pro";
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 18.34px;
+    text-align: center;
+  }
+  .output{
+    margin-bottom: 42px;
+  }
+  .dohod{
+    margin-bottom: 38px;
+  }
+  label{
+    color: #3C515A;
+  }
+  #send{
+    font-family: 'DIN Pro';
+    box-sizing: content-box;
+    font-size: 18px;
+    display: block;
+    color:white;
+    box-shadow: 0 2px 6px rgba(87, 80, 83, 0.35);
+    border-radius: 5px;
+    background-color: #0AB31C;
+    padding: 12px 51px;
+    border: 0;
+    margin: 0 auto 28px;
+  }
+  #accept{
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    overflow: hidden;
+  }
+  #accept::after ,#send::after{
+    opacity: .5;
+    content: "";
+    margin-left: 60px;
+    width: 20px;
+    height: 300px;
+    background: #fff;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-animation-name: slideme;
+    animation-name: slideme;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+@-webkit-keyframes slideme { 0% { left: -30px; margin-left: 0px; }
+  30% { left: 110%; margin-left: 80px; }
+  100% { left: 110%; margin-left: 80px; } }
+
+@keyframes slideme { 0% { left: -30px; margin-left: 0px; }
+  30% { left: 110%; margin-left: 80px; }
+  100% { left: 110%; margin-left: 80px; } }
+
+.ui-slider-horizontal .ui-slider-range-min{
+  background-color: #0AB31C;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  background-color: #0AB31C !important;
+  border-radius: 50%;
+  height: 18px !important;
+  width: 18px !important;
+  top: -8px !important;
+  outline: 0;
+  border: 0;
+}
+#slider-range-min{
+  height: 3px;
+}
+.ui-widget.ui-widget-content{
+  border: 0;
+  border-radius: 0;
+  background-color: #C4C3C3;
+}
+.ui-state-active{
+  border-color: transparent !important;
+}
+input[type=range] ~ .progress-bar{
+  top: 18px;
+  position: absolute;
+  display: block;
+  height: 3px;
+  background-color: #0AB31C;
+}
+.rng-wrap > p:first-child{
+  position: relative;
+}
+input[type=range]::-moz-range-progress{
+  background-color: #000;
+}
+input:read-only{
+  border-bottom: 0 !important;
+}
+.stv{
+  width: 104px;
+}
+.my_wrap{
+  display: flex;
+}
+.preview input{
+  width: 100%;
+}
+.modal__preview{
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 19px;
+  margin-bottom: 35px;
+}
+form.modal-content p{
+  font-size: 10px;
+  color: red;
+}
+form.modal-content > .input-field > label.active{
+  color: #0AB31C !important; 
+}
+.modal__preview label,.modal__preview input{
+  border: 0 !important;
+  max-height: 100%;
+  color: #9e9e9e;
+  font-size: inherit;
+}
+.modal-content .input-field input{
+  margin-bottom: 1px !important;
+}
+.modal{
+  width: 425px;
+}
+.modal-footer > p{
+  color: #9e9e9e;
+  font-size: 11px;
+  line-height: 10px;
+  text-align: center;
+}
+.modal-footer{
+  padding: 0 !important;
+  height: auto !important;
+  margin-bottom: 31px;
+}
+.modal button{
+  font-family: 'DINPro';
+  display: block;
+  margin: 0 auto;
+  color: white;
+  border: none;
+  width: 245px;
+  height: 38px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(87, 80, 83, 0.35);
+  background-color: #0AB31C;
+}

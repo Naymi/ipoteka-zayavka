@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Рефинансирование ипотеки</title>
+  <link rel="stylesheet" href="libs/materializecalc.css">
+  <link rel="stylesheet" href="css/calc.css">
+  <link rel="stylesheet" href="libs/range/css/ion.rangeSlider.css">
+  <link rel="stylesheet" href="libs/range/css/ion.rangeSlider.skinFlat.css">
+  <style>
+    .irs-grid *{
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter49678438 = new Ya.Metrika2({ id:49678438, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/49678438" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <div id="modal1" class="modal">
+    <form class="modal-content" accept-charset="UTF-8">
+      <input type="hidden" name="Тип заявки" value="Уменьшить платеж">
+      <div class="input-field">
+        <input type="text" id=name name=Имя>
+        <label for=name>Укажите ваше имя</label>
+      </div>
+      <div class="input-field">
+        <input type="text" id=mobile name="Номер телефона">
+        <label for="mobile">Номер телефона</label>
+      </div>
+      <div class="input-field">
+        <input type="text" id=email name=Email>
+        <label for="email">E-mail адрес</label>
+      </div>
+      <div class="modal__preview">
+        <label for="itog-price">Стоимость жилья:</label>
+        <input type="text" name="Стоимость жилья" id=itog-price disabled>
+        <label for="itog-dolg">Остаток долга:</label>
+        <input type="text" name="Остаток долга" id=itog-dolg disabled>
+        <label for="itog_pay">Ежемесячный платеж:</label>
+        <input type="text" name="Ежемесячный платеж" id=itog_pay disabled>
+        <label for="itog-srok">Срок:</label>
+        <input type="text" name="Срок" id=itog-srok disabled>
+        <label for="itog_dohod">Подтверждение дохода:</label>
+        <input type="text" name="Подтверждение дохода" id=itog_dohod disabled>
+      </div>
+      <button id="accept">Отправить заявку</button>
+    </form>
+    <div class="modal-footer">
+      <p>Пример расчёта процентной ставки носит исключительно <br>информационный характер и не является публичной офертой</p>
+    </div>
+  </div>
+  <header>
+    <div class="content">
+      <div class="logo">
+        <img src="/img/logo.svg" alt="">
+      </div>
+      <div class="preview">
+        Поможем уменьшить ваш ежемесячные
+        <br> платеж или изменить срок выплат
+      </div>
+      <div class="contacts">
+        <div class="mobile">
+          8 (800) 222 15 87
+        </div>
+        <a class="zvonok">
+          Заказать звонок специалиста
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="calc-wrap">
+      <h1>
+        РЕФИНАНСИРОВАНИЕ ИПОТЕКИ ОТ 8.75%
+      </h1>
+      <div class="prev">
+        Поможем уменьшить ваш ежемесячный платеж или изменить срок выплат. <br> Мы одобряем 9 из 10 заявок на перекредитование
+        ипотеки.
+      </div>
+      <div class="calc">
+        <div class="pick">
+          <label class="mybtn" for="sp">
+            <input checked id="sp" type="radio" name="Тип" value="Уменьшить платеж">
+            <span>Уменьшить платеж</span>
+          </label>
+          <label class="mybtn" for="cs">
+            <input id="cs" type="radio" name="Тип" value="Изменить срок">
+            <span>Изменить срок</span>
+          </label>
+        </div>
+        <div class="form-content">
+          <div class="form-calc">
+            <div class="inp-wrap">
+              <span>Стоимость жилья: </span>
+              <div class="wrap"><input type="text" id="price_val"> <i class="fa fa-rub" aria-hidden="true"></i></div>
+            </div>
+            <div class="rng-wrap">
+              <p>
+                <input type="text" step="25000" name="Стоимость жилья" id="price" data-min="625000" data-max="25000000" />
+              </p>
+              <div class="rng-mark">
+                <div class="min">625 тыс.</div>
+                <div class="max">25 млн</div>
+              </div>
+            </div>
+            <div class="inp-wrap">
+              <span>Остаток долга: </span>
+              <div class="wrap"><input type="text" id="dolg_val"> <i class="fa fa-rub" aria-hidden="true"></i></div>
+            </div>
+            <div class="rng-wrap">
+              <p>
+                <input type="text" step="25000" name="Остаток долга:" id="dolg" min="500000" max="6400000" />
+              </p>
+              <div class="rng-mark">
+                <div class="min">500 тыс.</div>
+                <div class="max">max!!</div>
+              </div>
+            </div>
+            <div id="srok-wrap" class="switchwrap">
+              <div class="inp-wrap">
+                <span>Срок: </span>
+                <input type="text" id="srok_val">
+              </div>
+              <div class="rng-wrap">
+                <p>
+                  <input type="text" name="Срок" id="srok" min="3" max="30" />
+                </p>
+                <div class="rng-mark">
+                  <div class="min">3 года</div>
+                  <div class="max">30 лет</div>
+                </div>
+              </div>
+            </div>
+            <div style="display: none;" id="eshplt-wrap" class="switchwrap">
+              <div class="inp-wrap">
+                <span>Ежемесячный платеж: </span>
+                <div class="wrap"><input disabled type="text" id="eshplt_val"> <i class="fa fa-rub" aria-hidden="true"></i></div>
+              </div>
+              <div class="rng-wrap">
+                <p>
+                  <input type="text" name="Ежемесячный платеж" id="eshplt"/>
+                </p>
+                <div class="rng-mark">
+                  <div class="min">min</div>
+                  <div class="max">max</div>
+                </div>
+              </div>
+            </div>
+            <div class="radio">
+              <p>
+                <label>
+                  <input checked type="radio" name="Подтверждение дохода" value="Справка 2-НДФЛ" />
+                  <span>Справка 2-НДФЛ</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="radio" name="Подтверждение дохода" value="Справка по форме банка" />
+                  <span>Справка по форме банка</span>
+                </label>
+              </p>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="output">
+              <div class="plt">
+                <div class="plt-prev">
+                  Ваш ежемесячный платеж:
+                </div>
+                <div class="plt-val"></div>
+              </div>
+              <div class="stv">
+                <div class="stv-prev">
+                  Ваша ставка:
+                </div>
+                <input readonly id="stv" class="stv-val">
+              </div>
+            </div>
+            <div class="dohod">
+              <div class="dohod-prev">
+                Подтверждение дохода:
+              </div>
+              <input type="text" readonly class="dohod-val" value="Справка 2-НДФЛ">
+            </div>
+            <button class="waves-effect waves-light modal-trigger" href="#modal1" id="send">Отправить заявку</button>
+            <div class="ps">
+              Пример расчёта процентной ставки носит исключительно <br> информационный характер и не является публичной офертой
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="/libs/mylib.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="libs/jq_mask.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="libs/range/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+  <script src="/js/calc.js"></script>
+</body>
+
+</html>

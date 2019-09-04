@@ -1,0 +1,57 @@
+.radio-item
+{
+  position: relative;
+
+  display: inline-block;
+  /*  margin: 10px 0 0;*/
+
+  max-width: 100%;
+  padding: 0 6px;
+}
+
+.radio-item input[type='radio']
+{
+  display: none;
+}
+
+.radio-item label
+{
+  font-weight: normal;
+
+  color: #666;
+}
+
+.radio-item label:before
+{
+  position: relative;
+  top: 1px;
+
+  display: inline-block;
+
+  width: 12px;
+  height: 12px;
+  margin: 0 5px 0 0;
+
+  content: ' ';
+
+  border: 2px solid #bababa;
+  border-radius: 11px;
+  background-color: transparent;
+}
+
+.radio-item input[type=radio]:checked + label:after
+{
+  position: absolute;
+  top: 5px;
+  left: 9px;
+
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  content: ' ';
+
+  border-radius: 11px;
+  background: #0AB31C;
+}

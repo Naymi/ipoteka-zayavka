@@ -1,0 +1,219 @@
+/* Костыль от рекламы */
+.cbalink
+{
+  display: none;
+}
+/* Костыль от рекламы */
+*
+  {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+a
+  {
+    text-decoration: none;
+    color: black;
+  }
+@font-face
+  {
+    font-family: 'DIN Pro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/DINPro.woff');
+  }
+@font-face
+  {
+    font-family: 'DIN Pro Medium';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/DINPro-Medium.woff');
+  }
+.zvonok{
+  cursor: pointer;
+}
+header
+  {
+    height: 182px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+  }
+header > .content
+  {
+    width: 1031px;
+    height: 124px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  header > .content > .preview
+    {
+      width: 355px;
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 28.34px;
+      letter-spacing: -1.34px;
+    }
+  header > .content > .contacts > .mobile
+    {
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 38.12px;
+      text-transform: uppercase;
+      letter-spacing: -1.57px;
+    }
+  header > .content > .contacts > a
+    {
+      color: #39474f;
+      font-family: "DIN Pro";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 28.34px;
+      text-decoration: underline;
+      letter-spacing: -1.06px;
+      float: right;
+    }
+main
+  {
+    padding-top: 130px;
+    height: 807px;
+    width: 100%;
+    background: url('/img/newbgc.jpg'), 100%;
+    background-repeat: no-repeat;
+  }
+  main > .content
+    {
+      margin: 0 auto;
+      height: 424px;
+      width: 956px;
+      /*background-color: #fff;*/
+    }
+    main > .content > h1
+      {
+        text-align: center;
+        color: #100d0d;
+        font-family: "DIN Pro";
+        font-size: 38px;
+        font-weight: 400;
+        /*line-height: 25px;*/
+        text-transform: uppercase;
+      }
+    main > .content > .preview
+      {
+        text-align: center;
+        color: #39474f;
+        font-family: "DIN Pro";
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 28.34px;
+        letter-spacing: -1.34px;
+      }
+    main > .content > .items
+      {
+        margin-top: 58px;
+        height: 275px;
+        width: 100%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+      }
+      main > .content > .items > *
+        {
+          margin: 0 auto;
+          text-align: center;
+        }
+      main > .content > .items  .item
+        {
+          width: 310px;
+          height: 269px;
+          box-shadow: 1px 4px 7px rgba(87, 80, 83, 0.75);
+          background-color: #ffffff;
+          background-color: #fff;
+          transition: 0.2s;
+          padding-top:40px ;
+        }
+      main > .content > .items .item:hover
+        {
+          transform: scale(1.2);
+        }
+        main > .content > .items  .item > .preview
+          {
+            
+          }
+        main > .content > .items  .item > h2
+          {
+            color: #39474f;
+            font-family: "DIN Pro";
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 28.34px;
+            letter-spacing: -1.34px;
+          }
+        main > .content > .items .item > .description
+          {
+            margin-top: 23px;
+            color: #39474f;
+            font-family: "DIN Pro";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18.34px;
+          }
+@media only screen and (max-width : 768px)
+{
+  header{
+    height: auto;
+  }
+    header > .content{
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    header .preview{
+      text-align: center;
+    }
+  main{
+    background-size: cover;
+    height: auto;
+  }
+    main > .content {
+      width: auto;
+      height: auto;
+    }
+      main > .content h1, main > .content .preview{
+        background-color: rgba(255,255,255,0.7);
+      }
+      main > .content h1{
+        padding-top: 20px;
+      }
+      main > .content .preview{
+        padding-bottom: 20px;
+      }
+    .items{
+      height: auto !important;
+      display: flex;
+      flex-direction: column;
+    }
+      .items > * {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+      }
+}
